@@ -66,6 +66,7 @@ sazon-integrador/
     │   ├── images/              # Fotografías e ilustraciones comunes (fondo.jpg, etc.)
     │   └── js/
     │       ├── global.js        # Utilidades transversales (sidebar, toast, modo día/noche)
+    │       ├── local-storage.js # Funciones reutilizables de persistencia (localStorage)
     │       └── templates.js     # Plantillas y componentes reutilizables
     │
     ├── auth-usuarios/           # CÉLULA 0 (BASE): Usuarios, Login, Registro, Roles y Perfil
