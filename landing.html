@@ -190,6 +190,31 @@
     </section>
   </header>
 
+  <nav aria-label="Miga de pan" class="bg-slate-100 dark:bg-sazon-verdeNutresaCard/70 border-b border-slate-200 dark:border-emerald-900/40 py-2 px-4 text-xs font-mono-tag overflow-x-auto">
+    <ol class="max-w-7xl mx-auto flex items-center gap-2 whitespace-nowrap list-none m-0 p-0">
+      <li class="flex items-center gap-2">
+        <span class="bg-white dark:bg-sazon-verdeNutresa px-2.5 py-1 rounded-md border border-slate-200 dark:border-emerald-800/60 text-slate-600 dark:text-slate-300 flex items-center gap-1.5">
+          <i class="bi bi-house"></i>
+          <span>Inicio</span>
+        </span>
+        <i class="bi bi-chevron-right text-slate-400 text-[10px]"></i>
+      </li>
+      <li class="flex items-center gap-2">
+        <span class="bg-white dark:bg-sazon-verdeNutresa px-2.5 py-1 rounded-md border border-slate-200 dark:border-emerald-800/60 text-slate-600 dark:text-slate-300 flex items-center gap-1.5">
+          <i class="bi bi-grid"></i>
+          <span>Módulos</span>
+        </span>
+        <i class="bi bi-chevron-right text-slate-400 text-[10px]"></i>
+      </li>
+      <li class="flex items-center">
+        <span aria-current="page" class="bg-sazon-verdeHoja text-white px-2.5 py-1 rounded-md font-bold flex items-center gap-1.5 shadow-sm">
+          <i class="bi bi-box-seam"></i>
+          <span>Despensa Virtual y Sugerencias</span>
+        </span>
+      </li>
+    </ol>
+  </nav>
+
   <main class="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-8">
     
     <section class="relative overflow-hidden rounded-3xl p-6 sm:p-10 text-white shadow-xl bg-gradient-to-br from-sazon-verdeNutresa via-[#215B33] to-sazon-verdeHoja" id="hero-banner">
@@ -470,25 +495,37 @@
     </button>
   </aside>
 
-  <footer class="mt-auto bg-sazon-cacao text-sazon-cacaoText dark:bg-sazon-marfil dark:text-sazon-cacao py-6 px-4 border-t border-black/10 transition-colors duration-300" id="main-footer">
-    <section class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
-      <header class="text-center md:text-left">
-        <p class="font-poppins font-bold text-sm m-0">Copyright © 2023 Grupo Nutresa</p>
-        <p class="font-mono-tag text-[10px] opacity-80 mt-1 m-0">Todos los derechos reservados. Proyecto académico Sazón.</p>
-      </header>
+  <footer class="relative z-20 bg-sazon-cacao dark:bg-sazon-verdeNutresa/95 text-white/90 py-3 px-4 sm:px-8 border-t border-black/10 dark:border-white/10 transition-colors duration-300" id="main-footer">
+    <section class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-2.5">
+      <article class="text-center md:text-left space-y-0.5">
+        <p class="font-poppins font-bold text-xs m-0 text-white">Equipo de Desarrollo Sa·zón</p>
+        <p class="font-mono-tag text-[10px] text-white/70 m-0">Copyright © 2026 Grupo Nutresa · Todos los derechos reservados</p>
+      </article>
 
-      <nav class="flex items-center gap-3 font-mono-tag text-[10px] font-bold">
-        <span class="px-2 py-1 rounded border border-current opacity-70 hover:opacity-100 flex items-center gap-1 transition-opacity">
-          <i class="bi bi-egg-fried text-sm"></i> ZENÚ
+      <nav class="flex flex-wrap justify-center items-center gap-2">
+        <span class="h-7 px-2.5 rounded-full bg-white/90 hover:bg-white border border-white/20 flex items-center justify-center shadow-sm transition-all" title="Zenú">
+          <img alt="Zenú" class="h-4 w-auto max-w-[55px] object-contain" src="./src/assets/images/zenu.png"/>
         </span>
-        <span class="px-2 py-1 rounded border border-current opacity-70 hover:opacity-100 flex items-center gap-1 transition-opacity">
-          <i class="bi bi-cup-hot text-sm"></i> DORIA
+        <span class="h-7 px-2.5 rounded-full bg-white/90 hover:bg-white border border-white/20 flex items-center justify-center shadow-sm transition-all" title="Doria">
+          <img alt="Doria" class="h-4 w-auto max-w-[55px] object-contain" src="./src/assets/images/doriapng.png"/>
         </span>
-        <span class="px-2 py-1 rounded border border-current opacity-70 hover:opacity-100 flex items-center gap-1 transition-opacity">
-          <i class="bi bi-heart-pulse text-sm"></i> PIETRÁN
+        <span class="h-7 px-2.5 rounded-full bg-white/90 hover:bg-white border border-white/20 flex items-center justify-center shadow-sm transition-all" title="Jet">
+          <img alt="Jet" class="h-4 w-auto max-w-[50px] object-contain" src="./src/assets/images/jet.svg"/>
         </span>
-        <span class="px-2 py-1 rounded border border-current opacity-70 hover:opacity-100 flex items-center gap-1 transition-opacity">
-          <i class="bi bi-cookie text-sm"></i> NOEL
+        <span class="h-7 px-2.5 rounded-full bg-white/90 hover:bg-white border border-white/20 flex items-center justify-center shadow-sm transition-all" title="Pietrán">
+          <img alt="Pietrán" class="h-4 w-auto max-w-[55px] object-contain" src="./src/assets/images/pietran.png"/>
+        </span>
+        <span class="h-7 px-2.5 rounded-full bg-white/90 hover:bg-white border border-white/20 flex items-center justify-center shadow-sm transition-all" title="Noel">
+          <img alt="Noel" class="h-4 w-auto max-w-[45px] object-contain" src="./src/assets/images/noel.svg"/>
+        </span>
+        <span class="h-7 px-2.5 rounded-full bg-white/90 hover:bg-white border border-white/20 flex items-center justify-center shadow-sm transition-all" title="Corona">
+          <img alt="Corona" class="h-4 w-auto max-w-[55px] object-contain" src="./src/assets/images/corona.svg"/>
+        </span>
+        <span class="h-7 px-2.5 rounded-full bg-white/90 hover:bg-white border border-white/20 flex items-center justify-center shadow-sm transition-all" title="Novaventa">
+          <img alt="Novaventa" class="h-4 w-auto max-w-[55px] object-contain" src="./src/assets/images/novaventapng.png"/>
+        </span>
+        <span class="h-7 px-2.5 rounded-full bg-white/90 hover:bg-white border border-white/20 flex items-center justify-center shadow-sm transition-all" title="Grupo Nutresa">
+          <img alt="Grupo Nutresa" class="h-4 w-auto max-w-[65px] object-contain" src="./src/assets/images/nutresa.png"/>
         </span>
       </nav>
     </section>
