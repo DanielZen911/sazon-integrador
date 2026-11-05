@@ -40,44 +40,49 @@
 
       <span class="text-[11px] font-mono-tag uppercase tracking-wider text-white/70 pt-4 pb-2 block">Módulos del Sistema</span>
 
-      <nav class="flex-1 flex flex-col justify-around py-2 font-poppins font-semibold text-sm">
+      <nav class="flex-1 flex flex-col justify-around py-2 font-poppins text-sm">
         
-        <a class="flex items-center gap-3.5 py-2 text-white hover:text-white/80 hover:translate-x-1.5 transition-all group" href="./src/auth-usuarios/" onclick="toggleSidebar()">
+        <a class="flex items-center gap-3.5 px-3 py-2 rounded-xl text-white bg-white/20 font-bold" href="./landing.html" onclick="toggleSidebar()">
+          <i class="bi bi-speedometer2 text-xl w-6 shrink-0 text-sazon-verdeNeon"></i>
+          <span>Dashboard Principal</span>
+        </a>
+
+        <a class="flex items-center gap-3.5 px-3 py-2 rounded-xl text-white hover:text-white/80 hover:translate-x-1.5 transition-all group hover:bg-white/10" href="./src/auth-usuarios/perfil.html" onclick="toggleSidebar()">
           <i class="bi bi-people text-xl w-6 shrink-0 opacity-90 group-hover:opacity-100"></i>
           <span>Usuarios y Autenticación</span>
         </a>
 
-        <a class="flex items-center gap-3.5 py-2 text-white hover:text-white/80 hover:translate-x-1.5 transition-all group" href="./src/catalogo-productos/" onclick="toggleSidebar()">
+        <a class="flex items-center gap-3.5 px-3 py-2 rounded-xl text-white hover:text-white/80 hover:translate-x-1.5 transition-all group hover:bg-white/10" href="./src/catalogo-productos/landing.html" onclick="toggleSidebar()">
           <i class="bi bi-grid text-xl w-6 shrink-0 opacity-90 group-hover:opacity-100"></i>
           <span>Catálogo Nutresa</span>
         </a>
 
-        <a class="flex items-center gap-3.5 py-2 text-white hover:text-white/80 hover:translate-x-1.5 transition-all group" href="./src/recetario-contenido/" onclick="toggleSidebar()">
+        <a class="flex items-center gap-3.5 px-3 py-2 rounded-xl text-white hover:text-white/80 hover:translate-x-1.5 transition-all group hover:bg-white/10" href="./src/recetario-contenido/landing.html" onclick="toggleSidebar()">
           <i class="bi bi-book text-xl w-6 shrink-0 opacity-90 group-hover:opacity-100"></i>
           <span>Recetario y Contenido</span>
         </a>
 
-        <a class="flex items-center gap-3.5 py-2 text-white hover:text-white/80 hover:translate-x-1.5 transition-all group" href="./src/despensa-virtual/" onclick="toggleSidebar()">
+        <a class="flex items-center gap-3.5 px-3 py-2 rounded-xl text-white hover:text-white/80 hover:translate-x-1.5 transition-all group hover:bg-white/10" href="./src/despensa-virtual/landing.html" onclick="toggleSidebar()">
           <i class="bi bi-box-seam text-xl w-6 shrink-0 opacity-90 group-hover:opacity-100"></i>
           <span>Despensa Virtual</span>
         </a>
 
-        <a class="flex items-center gap-3.5 py-2 text-white hover:text-white/80 hover:translate-x-1.5 transition-all group" href="./src/nutricion-perfiles/" onclick="toggleSidebar()">
+        <a class="flex items-center gap-3.5 px-3 py-2 rounded-xl text-white hover:text-white/80 hover:translate-x-1.5 transition-all group hover:bg-white/10" href="./src/nutricion-perfiles/landing.html" onclick="toggleSidebar()">
           <i class="bi bi-heart-pulse text-xl w-6 shrink-0 opacity-90 group-hover:opacity-100"></i>
           <span>Nutrición y Perfiles</span>
         </a>
 
-        <a class="flex items-center gap-3.5 py-2 text-white hover:text-white/80 hover:translate-x-1.5 transition-all group" href="./src/planificador-mercado/" onclick="toggleSidebar()">
+        <a class="flex items-center gap-3.5 px-3 py-2 rounded-xl text-white hover:text-white/80 hover:translate-x-1.5 transition-all group hover:bg-white/10" href="./src/planificador-mercado/landing.html" onclick="toggleSidebar()">
           <i class="bi bi-calendar-week text-xl w-6 shrink-0 opacity-90 group-hover:opacity-100"></i>
           <span>Planificador y Lista</span>
         </a>
 
-        <a class="flex items-center gap-3.5 py-2 text-white hover:text-white/80 hover:translate-x-1.5 transition-all group" href="./src/comunidad-valoraciones/" onclick="toggleSidebar()">
+        <a class="flex items-center gap-3.5 px-3 py-2 rounded-xl text-white hover:text-white/80 hover:translate-x-1.5 transition-all group hover:bg-white/10" href="./src/comunidad-valoraciones/landing.html" onclick="toggleSidebar()">
           <i class="bi bi-chat-heart text-xl w-6 shrink-0 opacity-90 group-hover:opacity-100"></i>
           <span>Comunidad y Reseñas</span>
         </a>
 
-        <a class="flex items-center gap-3.5 py-2 text-white hover:text-white/80 hover:translate-x-1.5 transition-all group" href="./src/mercadeo-campanas/" onclick="toggleSidebar()">
+        <a class="flex items-center gap-3.5 px-3 py-2 rounded-xl text-white hover:text-white/80 hover:translate-x-1.5 transition-all group hover:bg-white/10" href="./src/mercadeo-campanas/landing.html" onclick="toggleSidebar()">
           <i class="bi bi-megaphone text-xl w-6 shrink-0 opacity-90 group-hover:opacity-100"></i>
           <span>Campañas y Puntos</span>
         </a>
@@ -149,17 +154,10 @@
         </span>
         <i class="bi bi-chevron-right text-slate-400 text-[10px]"></i>
       </li>
-      <li class="flex items-center gap-2">
-        <span class="bg-white dark:bg-sazon-verdeNutresa px-2.5 py-1 rounded-md border border-slate-200 dark:border-emerald-800/60 text-slate-600 dark:text-slate-300 flex items-center gap-1.5">
-          <i class="bi bi-grid"></i>
-          <span>Módulos</span>
-        </span>
-        <i class="bi bi-chevron-right text-slate-400 text-[10px]"></i>
-      </li>
       <li class="flex items-center">
         <span aria-current="page" class="bg-sazon-verdeHoja text-white px-2.5 py-1 rounded-md font-bold flex items-center gap-1.5 shadow-sm">
-          <i class="bi bi-box-seam"></i>
-          <span>Despensa Virtual y Sugerencias</span>
+          <i class="bi bi-speedometer2"></i>
+          <span>Dashboard Central</span>
         </span>
       </li>
     </ol>
