@@ -16,9 +16,14 @@
 }
 
 body {
-  background-color: #F4F4E8 !important;
-  color: #3F4040 !important;
+  background-color: #F4F4E8;
+  color: #3F4040;
   font-family: 'Inter', sans-serif;
+}
+
+.dark body {
+  background-color: #114622;
+  color: #F4F4E8;
 }
 
 #top-header {
@@ -167,22 +172,22 @@ p, span, li, a {
   font-family: 'Inter', sans-serif;
 }
 
-.bg-sazon-marfil { background-color: #F4F4E8 !important; }
-.bg-sazon-cacao { background-color: #643B22 !important; }
-.bg-sazon-verdeHoja { background-color: #3D8E33 !important; }
-.bg-sazon-verdeNutresa { background-color: #1B4332 !important; }
-.bg-sazon-verdeNutresaCard { background-color: #133326 !important; }
+.bg-sazon-marfil { background-color: #F4F4E8; }
+.bg-sazon-cacao { background-color: #643B22; }
+.bg-sazon-verdeHoja { background-color: #3D8E33; }
+.bg-sazon-verdeNutresa { background-color: #1B4332; }
+.bg-sazon-verdeNutresaCard { background-color: #133326; }
 
-.text-sazon-verdeNoche { color: #114622 !important; }
-.text-sazon-verdeHondo { color: #215B33 !important; }
-.text-sazon-verdeHoja { color: #3D8E33 !important; }
-.text-sazon-hoja { color: #7FBA00 !important; }
-.text-sazon-verdeNeon { color: #66d149 !important; }
-.text-sazon-texto { color: #3F4040 !important; }
-.text-sazon-texto2 { color: #5B5E60 !important; }
-.text-sazon-cacao { color: #643B22 !important; }
-.text-sazon-cacaoText { color: #F4F4E8 !important; }
-.text-sazon-verdeNutresa { color: #1B4332 !important; }
+.text-sazon-verdeNoche { color: #114622; }
+.text-sazon-verdeHondo { color: #215B33; }
+.text-sazon-verdeHoja { color: #3D8E33; }
+.text-sazon-hoja { color: #7FBA00; }
+.text-sazon-verdeNeon { color: #66d149; }
+.text-sazon-texto { color: #3F4040; }
+.text-sazon-texto2 { color: #5B5E60; }
+.text-sazon-cacao { color: #643B22; }
+.text-sazon-cacaoText { color: #F4F4E8; }
+.text-sazon-verdeNutresa { color: #1B4332; }
 
 .btn-action-primary {
   background-color: #ffffff !important;
