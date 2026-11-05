@@ -163,8 +163,7 @@ body {
   color: #F4F4E8 !important;
 }
 
-h1, h2, h3, h4, h5, h6, strong {
-  color: #114622;
+h1, h2, h3, h4, h5, h6, strong, .font-title {
   font-family: 'Poppins', sans-serif;
 }
 

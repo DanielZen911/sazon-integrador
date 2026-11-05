@@ -1,3 +1,13 @@
+if (typeof localStorage !== 'undefined' && typeof document !== 'undefined') {
+  if (localStorage.getItem('sazon_theme') === 'dark') {
+    document.documentElement.classList.add('dark');
+    document.documentElement.classList.remove('light');
+  } else {
+    document.documentElement.classList.remove('dark');
+    document.documentElement.classList.add('light');
+  }
+}
+
 window.tailwind = window.tailwind || {};
 window.tailwind.config = {
   darkMode: 'class',
@@ -107,10 +117,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
     document.getElementById('themeDayBtn')?.addEventListener('click', () => switchTheme('light'));
     document.getElementById('themeNightBtn')?.addEventListener('click', () => switchTheme('dark'));
-  } else {
-    document.documentElement.classList.remove('dark');
-    document.documentElement.classList.add('light');
   }
+
+  document.querySelectorAll('button[id*="toggle-pass"], button[id*="toggle-password"], [data-action="toggle-password"]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const container = btn.closest('section') || btn.parentElement;
+      const input = container ? container.querySelector('input') : null;
+      const icon = btn.querySelector('i');
+      if (input) {
+        const isPass = input.type === 'password';
+        input.type = isPass ? 'text' : 'password';
+        if (icon) {
+          icon.className = isPass ? 'bi bi-eye-slash text-sm' : 'bi bi-eye text-sm';
+        }
+      }
+    });
+  });
 
   document.querySelectorAll('[data-action="toggle-sidebar"]').forEach(el => {
     el.addEventListener('click', toggleSidebar);
