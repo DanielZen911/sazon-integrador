@@ -148,6 +148,8 @@
           </label>
         </section>
 
+        <output class="hidden w-full p-3 rounded-xl font-mono-tag text-xs font-semibold text-center block transition-all" id="register-alert" role="alert"></output>
+
         <button class="w-full py-3.5 px-4 rounded-xl bg-sazon-verdeHoja hover:bg-[#327a29] active:scale-[0.99] text-white font-poppins font-bold text-sm shadow-md hover:shadow-lg transition-all flex items-center justify-center gap-2 group mt-2" id="btn-submit-register" type="submit">
           <span>Crear mi Cuenta</span>
           <i class="bi bi-arrow-right text-base group-hover:translate-x-1 transition-transform"></i>
@@ -253,6 +255,6 @@
       setupPasswordToggle('btn-toggle-pass-2', 'register-password-confirm', 'icon-eye-2');
     });
   </script>
-  <script src="../assets/js/usuarios-db.js" type="module"></script>
+  <script src="./auth.js" type="module"></script>
 </body>
 </html>
