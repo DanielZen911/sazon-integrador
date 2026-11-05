@@ -6,63 +6,13 @@
   <title>Sa·zón Digital · Vista de Aterrizaje Ecosistema Nutresa</title>
   
   <script src="https://cdn.tailwindcss.com"></script>
+  <script src="./src/assets/js/global.js"></script>
+
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet"/>
   <link href="https://fonts.googleapis.com" rel="preconnect"/>
   <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=Poppins:wght@500;600;700;800;900&display=swap" rel="stylesheet"/>
-
-  <script>
-    tailwind.config = {
-      darkMode: 'class',
-      theme: {
-        extend: {
-          colors: {
-            sazon: {
-              marfil: '#F4F4E8',
-              cacao: '#643B22',
-              cacaoText: '#F4F4E8',
-              verdeHoja: '#3D8E33',
-              verdeNutresa: '#1B4332',
-              verdeNutresaCard: '#133326',
-              verdeNeon: '#66d149',
-              brandZenu: '#D32F2F',
-              brandDoria: '#E65100',
-              brandPietran: '#2E7D32',
-              brandNoel: '#C2185B'
-            }
-          },
-          fontFamily: {
-            poppins: ['"Poppins"', 'sans-serif'],
-            inter: ['"Inter"', 'sans-serif'],
-            mono: ['"IBM Plex Mono"', 'monospace'],
-          }
-        }
-      }
-    }
-  </script>
-
-  <style>
-    h1, h2, h3, h4, h5, h6, .font-title { font-family: 'Poppins', sans-serif; }
-    body, p, span, figcaption { font-family: 'Inter', sans-serif; }
-    button, input, select, label, .font-mono-tag, code, .badge, time, output { font-family: 'IBM Plex Mono', monospace; }
-    body, header, footer, aside, section, article, button, input {
-      transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
-    }
-    #sidebar {
-      transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-    ::-webkit-scrollbar { width: 7px; height: 7px; }
-    ::-webkit-scrollbar-track { background: rgba(0,0,0,0.05); }
-    .dark ::-webkit-scrollbar-track { background: rgba(255,255,255,0.05); }
-    ::-webkit-scrollbar-thumb { background: #3D8E33; border-radius: 4px; }
-    
-    .module-card {
-      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-    .module-card:hover {
-      transform: translateY(-4px);
-    }
-  </style>
+  <link href="./src/assets/css/global.css" rel="stylesheet"/>
 </head>
 
 <body class="bg-sazon-marfil text-slate-800 dark:bg-sazon-verdeNutresa dark:text-slate-100 min-h-screen flex flex-col font-inter" id="app-body">
@@ -177,14 +127,14 @@
           <span class="absolute top-1 right-1 w-2 h-2 bg-red-500 rounded-full border border-white dark:border-sazon-verdeNutresaCard"></span>
         </button>
 
-        <figure class="flex items-center gap-2 pl-2 border-l border-slate-200 dark:border-emerald-800/60 cursor-pointer hover:opacity-80 transition-opacity m-0" onclick="showToast('Perfil activo: Mariana Morales (Chef de Comunidad)')">
-          <img alt="Usuario Mariana Morales" class="w-9 h-9 rounded-full object-cover ring-2 ring-sazon-verdeHoja" src="https://www.gstatic.com/labs-code/stitch/stitch-placeholder-300x300.svg"/>
+        <a class="flex items-center gap-2 pl-2 border-l border-slate-200 dark:border-emerald-800/60 cursor-pointer hover:opacity-80 transition-opacity" href="./src/auth-usuarios/perfil.html" id="header-user-badge">
+          <img alt="Usuario" class="w-9 h-9 rounded-full object-cover ring-2 ring-sazon-verdeHoja" id="header-avatar" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=256&h=256&q=80"/>
           <figcaption class="hidden sm:block text-left leading-tight">
-            <span class="font-poppins font-bold text-xs block text-slate-900 dark:text-white">Mariana Morales</span>
-            <span class="font-mono-tag text-[10px] text-slate-500 dark:text-sazon-verdeNeon block">Chef de Comunidad</span>
+            <span class="font-poppins font-bold text-xs block text-slate-900 dark:text-white" id="header-name">Mariana Morales</span>
+            <span class="font-mono-tag text-[10px] text-slate-500 dark:text-sazon-verdeNeon block capitalize" id="header-role">creador de contenido</span>
           </figcaption>
           <i class="bi bi-chevron-down text-xs text-slate-400 hidden sm:block"></i>
-        </figure>
+        </a>
       </section>
 
     </section>
@@ -271,81 +221,6 @@
     </section>
   </footer>
 
-  <script>
-    function toggleSidebar() {
-      const sidebar = document.getElementById('sidebar');
-      const overlay = document.getElementById('sidebar-overlay');
-      const isHidden = sidebar.classList.contains('-translate-x-full');
-      if (isHidden) {
-        sidebar.classList.remove('-translate-x-full');
-        overlay.classList.remove('hidden');
-        setTimeout(() => overlay.classList.remove('opacity-0'), 10);
-      } else {
-        sidebar.classList.add('-translate-x-full');
-        overlay.classList.add('opacity-0');
-        setTimeout(() => overlay.classList.add('hidden'), 300);
-      }
-    }
-
-    function switchTheme(theme) {
-      const html = document.documentElement;
-      const dayBtn = document.getElementById('themeDayBtn');
-      const nightBtn = document.getElementById('themeNightBtn');
-      
-      if (theme === 'dark') {
-        html.classList.add('dark');
-        html.classList.remove('light');
-        try { localStorage.setItem('sazon_theme', 'dark'); } catch(e) {}
-        if (dayBtn && nightBtn) {
-          nightBtn.className = 'flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[#3D8E33] text-white font-bold shadow-sm transition-all duration-200';
-          dayBtn.className = 'flex items-center gap-1.5 px-3 py-1.5 rounded-full text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-all duration-200';
-        }
-      } else {
-        html.classList.remove('dark');
-        html.classList.add('light');
-        try { localStorage.setItem('sazon_theme', 'light'); } catch(e) {}
-        if (dayBtn && nightBtn) {
-          dayBtn.className = 'flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[#3D8E33] text-white font-bold shadow-sm transition-all duration-200';
-          nightBtn.className = 'flex items-center gap-1.5 px-3 py-1.5 rounded-full text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-all duration-200';
-        }
-      }
-    }
-
-    function toggleTheme() {
-      const isDark = document.documentElement.classList.contains('dark');
-      switchTheme(isDark ? 'light' : 'dark');
-    }
-
-    function showToast(message) {
-      const toast = document.getElementById('custom-toast');
-      const toastMsg = document.getElementById('toast-msg');
-      if (!toast || !toastMsg) return;
-      toastMsg.textContent = message;
-      toast.classList.remove('hidden');
-      clearTimeout(window._toastTimeout);
-      window._toastTimeout = setTimeout(() => toast.classList.add('hidden'), 3500);
-    }
-
-    function handleGlobalSearch(event) {
-      const query = event.target.value.toLowerCase().trim();
-      const cards = document.querySelectorAll('#modules-container article');
-      cards.forEach(card => {
-        const text = card.textContent.toLowerCase();
-        card.style.display = text.includes(query) ? 'flex' : 'none';
-      });
-    }
-
-    document.addEventListener('DOMContentLoaded', () => {
-      try {
-        const savedTheme = localStorage.getItem('sazon_theme');
-        if (savedTheme === 'dark') {
-          switchTheme('dark');
-        } else {
-          switchTheme('light');
-        }
-      } catch(e) {}
-    });
-  </script>
   <script src="./src/assets/js/usuarios-db.js" type="module"></script>
 </body>
 </html>

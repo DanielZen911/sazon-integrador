@@ -96,12 +96,55 @@ function switchTheme(theme) {
     }
   }
 }
+window.toggleSidebar = toggleSidebar;
+window.showToast = showToast;
 window.switchTheme = switchTheme;
+
+function handleGlobalSearch(event) {
+  const target = event ? event.target : document.getElementById('global-search');
+  if (!target) return;
+  const query = target.value.toLowerCase().trim();
+  const cards = document.querySelectorAll('#modules-container article, [data-searchable]');
+  cards.forEach(card => {
+    const text = card.textContent.toLowerCase();
+    card.style.display = text.includes(query) ? '' : 'none';
+  });
+}
+window.handleGlobalSearch = handleGlobalSearch;
+
+function syncHeaderSession() {
+  if (typeof localStorage === 'undefined') return;
+  try {
+    let sesionStr = localStorage.getItem('sazon_sesion_activa');
+    if (!sesionStr) {
+      const defaultUser = {
+        id: 3,
+        nombre: 'Mariana Morales',
+        email: 'mariana@nutresa.com',
+        rol: 'creador de contenido',
+        avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=256&h=256&q=80',
+        biografia: 'Chef entusiasta y creadora de recetas para la comunidad Sa·zón. Comprometida con la nutrición balanceada y la creatividad culinaria con marcas Grupo Nutresa.'
+      };
+      localStorage.setItem('sazon_sesion_activa', JSON.stringify(defaultUser));
+      sesionStr = JSON.stringify(defaultUser);
+    }
+    const sesion = JSON.parse(sesionStr);
+    const nameEl = document.getElementById('header-name');
+    const roleEl = document.getElementById('header-role');
+    const avatarEl = document.getElementById('header-avatar');
+    if (nameEl && sesion.nombre) nameEl.textContent = sesion.nombre;
+    if (roleEl && sesion.rol) roleEl.textContent = sesion.rol;
+    if (avatarEl && sesion.avatar) avatarEl.src = sesion.avatar;
+  } catch(e) {}
+}
+window.syncHeaderSession = syncHeaderSession;
 
 document.addEventListener('DOMContentLoaded', () => {
   if (typeof tailwind !== 'undefined') {
     tailwind.config = window.tailwind.config;
   }
+
+  syncHeaderSession();
 
   if (document.getElementById('themeDayBtn')) {
     try {
