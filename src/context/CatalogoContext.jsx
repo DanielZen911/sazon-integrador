@@ -18,13 +18,13 @@ export const CatalogoProvider = ({ children }) => {
         modoConservacion: "Refrigeración",
         categoria: "Cárnicos",
         precioSugerido: 13500,
-        imagen: "https://images.unsplash.com/photo-1595856711589-91ee0a6ec6cb?auto=format&fit=crop&q=80&w=400", 
+        imagen: "", 
         recetasAsociadas: [
           {
             id: "101",
             nombre: "Arroz con Salchichas Zenú",
             tiempoPreparacion: "25 min",
-            imagen: "https://images.unsplash.com/photo-1512058564366-18510be2db19?auto=format&fit=crop&q=80&w=300"
+            imagen: "https://zenu.com.co/wp-content/uploads/2023/12/DUMMIE-ZENU-SCHA-TRADICIONAL-450G-1.webp"
           }
         ]
       };
