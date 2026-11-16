@@ -5,11 +5,11 @@ import FilterBar from '../components/user/FilterBar';
 import ProductCard from '../components/user/ProductCard';
 import catalogoMockData from '../data/CatalogoMock';
 
-/** Quita tildes y pasa a minúsculas para búsquedas tolerantes ("cafe" encuentra "Café"). */
+
 const normalize = (text = '') =>
   text.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().trim();
 
-/** Estado vacío centrado, con acción para limpiar los filtros. */
+
 function EmptyState({ onClear }) {
   return (
     <div
@@ -38,21 +38,18 @@ EmptyState.propTypes = {
   onClear: PropTypes.func.isRequired,
 };
 
-/** Vista principal de la vitrina de catálogo (HU-04). */
+
 export default function CatalogoView() {
   const ctx = useContext(CatalogoContext);
   const data = ctx ?? catalogoMockData;
   const { productos, marcas, categorias, presentaciones, imagenesProducto } = data;
 
-  // Estado de los filtros (null = sin filtro)
+  
   const [searchText, setSearchText] = useState('');
   const [marcaId, setMarcaId] = useState(null);
   const [categoriaId, setCategoriaId] = useState(null);
 
-  /**
-   * Une cada producto con su marca, categoría, presentación e imagen principal.
-   * Solo se recalcula cuando cambian los datos del contexto.
-   */
+  
   const catalogo = useMemo(() => {
     const marcaPorId = new Map(marcas.map((m) => [m.id, m]));
     const categoriaPorId = new Map(categorias.map((c) => [c.id, c]));
@@ -87,7 +84,7 @@ export default function CatalogoView() {
       });
   }, [productos, marcas, categorias, presentaciones, imagenesProducto]);
 
-  /** Motor de filtros: texto + marca + categoría combinados (AND). */
+  
   const productosFiltrados = useMemo(() => {
     const query = normalize(searchText);
     return catalogo.filter(
@@ -105,7 +102,7 @@ export default function CatalogoView() {
   }, []);
 
   const handleVerFicha = useCallback((producto) => {
-    // Punto de enganche para la ficha de producto (otra HU).
+    
     if (typeof window !== 'undefined' && typeof window.showToast === 'function') {
       window.showToast(`Ficha de ${producto.nombre} próximamente`);
     }

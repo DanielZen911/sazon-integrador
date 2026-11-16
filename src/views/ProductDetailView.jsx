@@ -3,7 +3,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import { CatalogoContext } from "../context/CatalogoContext";
 import catalogoMockData from "../data/CatalogoMock";
 
-/* ------------------------------ Utilidades ------------------------------ */
+
 
 const formatearCOP = (valor) => {
   const numero = Number(valor);
@@ -18,7 +18,7 @@ const formatearCOP = (valor) => {
 const mostrar = (valor) =>
   valor === null || valor === undefined || valor === "" ? "—" : valor;
 
-/* ------------------------------ Placeholder ----------------------------- */
+
 
 const ImagenPlaceholder = () => (
   <div
@@ -45,14 +45,14 @@ const ImagenPlaceholder = () => (
   </div>
 );
 
-/* ------------------------------- Componente ----------------------------- */
+
 
 const ProductDetailView = () => {
   const { id } = useParams();
   const navigate = useNavigate();
   const idProducto = Number(id);
 
-  // Si no hay Provider, se usa el mock como respaldo (igual que CatalogoView)
+  
   const contexto = useContext(CatalogoContext) ?? catalogoMockData;
   const {
     productos = [],
@@ -62,7 +62,7 @@ const ProductDetailView = () => {
     imagenesProducto = [],
   } = contexto;
 
-  // Cruce de datos entre arreglos
+  
   const { producto, marca, categoria, presentacion, imagen } = useMemo(() => {
     if (!Number.isFinite(idProducto)) return {};
 
@@ -98,7 +98,7 @@ const ProductDetailView = () => {
 
   const volver = () => navigate(-1);
 
-  /* ---------------------------- Estado 404 ---------------------------- */
+  
   if (!producto) {
     return (
       <section
@@ -123,7 +123,7 @@ const ProductDetailView = () => {
     );
   }
 
-  /* ------------------------ Datos listos para pintar ------------------------ */
+  
   const urlImagen = imagen?.url ?? null;
   const nombre = producto?.nombre ?? "Producto sin nombre";
   const contenido =
@@ -132,7 +132,7 @@ const ProductDetailView = () => {
       ? `${presentacion.contenidoNeto} ${presentacion?.unidadMedida ?? ""}`.trim()
       : "—";
 
-  // El precio de la presentación manda; si no existe, el precio de referencia
+  
   const precio = presentacion?.precio ?? producto?.precioReferencia;
 
   const atributos = [
@@ -141,7 +141,7 @@ const ProductDetailView = () => {
     { etiqueta: "Precio", valor: formatearCOP(precio) },
   ];
 
-  /* ------------------------------- Render ------------------------------- */
+  
   return (
     <section className="mx-auto w-full max-w-6xl px-4 py-8 sm:px-6 lg:px-8">
       {/* Header */}
@@ -181,7 +181,7 @@ const ProductDetailView = () => {
           )}
         </div>
 
-        {/* Columna derecha: información */}
+        
         <div className="flex flex-col gap-4">
           {categoria?.nombre && (
             <span className="font-mono-tag w-fit rounded-full bg-[#3D8E33]/10 px-3 py-1 text-xs font-medium text-[#215B33] dark:bg-[#66d149]/15 dark:text-[#66d149]">
